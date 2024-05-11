@@ -1,0 +1,120 @@
+[global_config]
+  suppress_multiple_term_dialog = True
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.88
+    background_type = transparent
+  [[LPC]]
+    background_color = "#00203a"
+  [[OPC]]
+  [[Joystick]]
+    background_color = "#011d00"
+  [[NPC]]
+    background_color = "#4a1616"
+  [[Jetson-nvblox]]
+    background_color = "#011d00"
+  [[Nimbro]]
+    background_color = "#011d00"
+  [[Jetson-camera]]
+    background_color = "#011d00"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+  [[AIRA]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 348:110
+      maximised = False
+      fullscreen = False
+      size = 1547, 692
+      title = /bin/bash
+      last_active_term = aaef0ac5-84dc-4196-a966-02a208e40ec8
+      last_active_window = True
+    [[[child1]]]
+      type = HPaned
+      parent = child0
+      order = 0
+      position = 766
+      ratio = 0.496757457846952
+    [[[child2]]]
+      type = VPaned
+      parent = child1
+      order = 0
+      position = 329
+      ratio = 0.47889374090247455
+    [[[terminal3]]]
+      type = Terminal
+      parent = child2
+      order = 0
+      profile = LPC
+      uuid = a569050b-f42a-4c3a-8781-2e26d4d330ab
+      command = ""
+    [[[child4]]]
+      type = VPaned
+      parent = child2
+      order = 1
+      position = 154
+      ratio = 0.43137254901960786
+    [[[terminal5]]]
+      type = Terminal
+      parent = child4
+      order = 0
+      profile = OPC
+      uuid = e24ba090-61c8-45fb-9134-29875cabe9b1
+    [[[terminal6]]]
+      type = Terminal
+      parent = child4
+      order = 1
+      profile = Joystick
+      uuid = 4aea5ade-3006-40e4-887b-dec404667811
+    [[[child7]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 329
+      ratio = 0.47889374090247455
+    [[[child8]]]
+      type = VPaned
+      parent = child7
+      order = 0
+      position = 172
+      ratio = 0.5308641975308642
+    [[[terminal9]]]
+      type = Terminal
+      parent = child8
+      order = 0
+      profile = NPC
+      uuid = 6127585e-5d1b-41fd-931d-924b68ceb8fc
+    [[[terminal10]]]
+      type = Terminal
+      parent = child8
+      order = 1
+      profile = Jetson-nvblox
+      uuid = 1b4e38a0-0151-463d-87f4-4d201afee537
+    [[[child11]]]
+      type = VPaned
+      parent = child7
+      order = 1
+      position = 154
+      ratio = 0.43137254901960786
+    [[[terminal12]]]
+      type = Terminal
+      parent = child11
+      order = 0
+      profile = Jetson-camera
+      uuid = 3aec4559-8172-4dd5-bc0e-df3f07fcf862
+    [[[terminal13]]]
+      type = Terminal
+      parent = child11
+      order = 1
+      profile = Nimbro
+      uuid = aaef0ac5-84dc-4196-a966-02a208e40ec8
+[plugins]
