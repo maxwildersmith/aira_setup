@@ -8,15 +8,9 @@
   [[LPC]]
     background_color = "#00203a"
   [[OPC]]
-  [[Joystick]]
-    background_color = "#011d00"
   [[NPC]]
     background_color = "#4a1616"
-  [[Jetson-nvblox]]
-    background_color = "#011d00"
-  [[Nimbro]]
-    background_color = "#011d00"
-  [[Jetson-camera]]
+  [[Jetson]]
     background_color = "#011d00"
 [layouts]
   [[default]]
@@ -26,95 +20,89 @@
     [[[child1]]]
       type = Terminal
       parent = window0
+      profile = default
   [[AIRA]]
     [[[child0]]]
       type = Window
       parent = ""
       order = 0
-      position = 348:110
+      position = 752:965
       maximised = False
       fullscreen = False
-      size = 1547, 692
+      size = 1492, 710
       title = /bin/bash
-      last_active_term = aaef0ac5-84dc-4196-a966-02a208e40ec8
+      last_active_term = 4aea5ade-3006-40e4-887b-dec404667811
       last_active_window = True
     [[[child1]]]
       type = HPaned
       parent = child0
       order = 0
-      position = 766
-      ratio = 0.496757457846952
+      position = 740
+      ratio = 0.4976462676529926
     [[[child2]]]
       type = VPaned
       parent = child1
       order = 0
-      position = 329
-      ratio = 0.47889374090247455
+      position = 336
+      ratio = 0.4765957446808511
     [[[terminal3]]]
       type = Terminal
       parent = child2
       order = 0
       profile = LPC
       uuid = a569050b-f42a-4c3a-8781-2e26d4d330ab
-      command = ""
+      command = '''ssh ${USER}@anymal-${ROBOT_NAME}-lpc -X -t "tmux new -A -s main 'cw; s; bash -l'"; bash -l'''
     [[[child4]]]
       type = VPaned
       parent = child2
       order = 1
-      position = 154
-      ratio = 0.43137254901960786
+      position = 157
+      ratio = 0.4266304347826087
     [[[terminal5]]]
       type = Terminal
       parent = child4
       order = 0
       profile = OPC
       uuid = e24ba090-61c8-45fb-9134-29875cabe9b1
+      command = cw; s; bash -l
     [[[terminal6]]]
       type = Terminal
       parent = child4
       order = 1
-      profile = Joystick
+      profile = OPC
       uuid = 4aea5ade-3006-40e4-887b-dec404667811
+      command = cw; s; bash -l
     [[[child7]]]
       type = VPaned
       parent = child1
       order = 1
-      position = 329
-      ratio = 0.47889374090247455
-    [[[child8]]]
-      type = VPaned
-      parent = child7
-      order = 0
-      position = 172
-      ratio = 0.5308641975308642
-    [[[terminal9]]]
+      position = 336
+      ratio = 0.4765957446808511
+    [[[terminal8]]]
       type = Terminal
-      parent = child8
+      parent = child7
       order = 0
       profile = NPC
       uuid = 6127585e-5d1b-41fd-931d-924b68ceb8fc
-    [[[terminal10]]]
-      type = Terminal
-      parent = child8
-      order = 1
-      profile = Jetson-nvblox
-      uuid = 1b4e38a0-0151-463d-87f4-4d201afee537
-    [[[child11]]]
+      command = '''ssh ${USER}@anymal-${ROBOT_NAME}-npc -X -t "tmux new -A -s main 'cw; s; bash -l'"; bash -l'''
+    [[[child9]]]
       type = VPaned
       parent = child7
       order = 1
-      position = 154
-      ratio = 0.43137254901960786
-    [[[terminal12]]]
+      position = 157
+      ratio = 0.4266304347826087
+    [[[terminal10]]]
       type = Terminal
-      parent = child11
+      parent = child9
       order = 0
-      profile = Jetson-camera
+      profile = Jetson
       uuid = 3aec4559-8172-4dd5-bc0e-df3f07fcf862
-    [[[terminal13]]]
+      command = ssh ${USER}@anymal-${ROBOT_NAME}-jetson -X -t "cw; s; bash -l"; echo $USER; bash -l
+    [[[terminal11]]]
       type = Terminal
-      parent = child11
+      parent = child9
       order = 1
-      profile = Nimbro
+      profile = Jetson
       uuid = aaef0ac5-84dc-4196-a966-02a208e40ec8
+      command = ssh ${USER}@anymal-${ROBOT_NAME}-jetson -X -t "cw; s; bash -l"; bash -l
 [plugins]
