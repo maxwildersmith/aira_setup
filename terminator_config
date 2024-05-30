@@ -21,6 +21,7 @@
       type = Terminal
       parent = window0
       profile = default
+      command = ""
   [[AIRA]]
     [[[child0]]]
       type = Window
@@ -51,7 +52,7 @@
       order = 0
       profile = LPC
       uuid = a569050b-f42a-4c3a-8781-2e26d4d330ab
-      command = '''ssh ${USER}@anymal-${ROBOT_NAME}-lpc -X -t "tmux new -A -s main 'cw; s; bash -l'"; bash -l'''
+      command = '''bash --rcfile <( echo $'. ~/.bashrc; ssh ${USER}@anymal-${ROBOT_NAME}-lpc -X -t "tmux new -A -s main \'cw; s; bash -l\'"')'''
     [[[child4]]]
       type = VPaned
       parent = child2
@@ -84,7 +85,7 @@
       order = 0
       profile = NPC
       uuid = 6127585e-5d1b-41fd-931d-924b68ceb8fc
-      command = '''ssh ${USER}@anymal-${ROBOT_NAME}-npc -X -t "tmux new -A -s main 'cw; s; bash -l'"; bash -l'''
+      command = '''bash --rcfile <( echo $'. ~/.bashrc; ssh ${USER}@anymal-${ROBOT_NAME}-npc -X -t "tmux new -A -s main \'cw; s; bash -l\'"')'''
     [[[child9]]]
       type = VPaned
       parent = child7
@@ -97,12 +98,12 @@
       order = 0
       profile = Jetson
       uuid = 3aec4559-8172-4dd5-bc0e-df3f07fcf862
-      command = ssh ${USER}@anymal-${ROBOT_NAME}-jetson -X -t "cw; s; bash -l"; echo $USER; bash -l
+      command = '''bash --rcfile <( echo $'. ~/.bashrc; ssh ${USER}@anymal-${ROBOT_NAME}-jetson -X -t "cw; s; bash -l"')'''
     [[[terminal11]]]
       type = Terminal
       parent = child9
       order = 1
       profile = Jetson
       uuid = aaef0ac5-84dc-4196-a966-02a208e40ec8
-      command = ssh ${USER}@anymal-${ROBOT_NAME}-jetson -X -t "cw; s; bash -l"; bash -l
+      command = '''bash --rcfile <( echo $'. ~/.bashrc; ssh ${USER}@anymal-${ROBOT_NAME}-jetson -X -t "cw; s; bash -l"')'''
 [plugins]
